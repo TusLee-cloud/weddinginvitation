@@ -356,14 +356,12 @@ section{
     font-size: 45px;
     letter-spacing:2px;
     color:#b38b3c;
-    font-family: "Grenze", serif;
 }
 
 .couple-section h3{
     font-size:30px;
     color:#b38b3c;
     margin: 1em 0 1em 0;
-    font-family: "Grenze", serif;
     text-transform: capitalize;
 }
 
@@ -429,6 +427,7 @@ section{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 30px;
+    font-family: "Cormorant Garamond", serif;
 }
 
 .day-name {

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift QR</title>
+
+<style>
+body {
+    font-family: Georgia, serif;
+    background: #faf6f2;
+    margin: 0;
+    padding: 40px;
+}
+
+/* ===== CARD ===== */
+.gift-boxes {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gift-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.gift-card h3 {
+    color: #6b4f43;
+}
+
+.qr-box img {
+    width: 200px;
+    margin: 15px 0;
+}
+
+.gift-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background: #e8d8cd;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #d9c2b3;
+}
+
+/* ===== DIALOG ===== */
+.dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.dialog-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dialog-box {
+    background: #fdf8f4;
+    padding: 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    animation: fadeUp 0.4s ease;
+    color: #6b4f43;
+}
+
+.dialog-box p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.dialog-box button {
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="gift-boxes">
+
+    <!-- ===== CHÚ RỂ ===== -->
+    <div class="gift-card groom-card">
+        <h3>MỪNG CƯỚI ĐẾN<br>CHÚ RỂ</h3>
+
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Groom">
+        </div>
+
+        <div class="gift-actions">
+            <button class="copy-groom">Copy STK</button>
+        </div>
+
+        <div class="groom-bank" style="display:none;">
+            <p class="groom-bank-name">MB Bank</p>
+            <p class="groom-bank-number">0123456789</p>
+            <p class="groom-bank-owner">NGUYỄN VĂN A</p>
+        </div>
+    </div>
+
+
+    <!-- ===== CÔ DÂU ===== -->
+    <div class="gift-card bride-card">
+        <h3>MỪNG CƯỚI ĐẾN<br>CÔ DÂU</h3>
+
+        <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Bride">
+        </div>
+
+        <div class="gift-actions">
+            <button class="copy-bride">Copy STK</button>
+        </div>
+
+        <div class="bride-bank" style="display:none;">
+            <p class="bride-bank-name">Vietcombank</p>
+            <p class="bride-bank-number">987654321</p>
+            <p class="bride-bank-owner">TRẦN THỊ B</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ===== DIALOG ===== -->
+<div id="copyDialog" class="dialog-overlay">
+    <div class="dialog-box">
+        <p id="dialogMessage">Đã sao chép thành công 💌</p>
+        <button id="closeDialog">Đóng</button>
+    </div>
+</div>
+
+
+<script>
+// ===== SHOW DIALOG =====
+function showDialog(message) {
+    const dialog = document.getElementById("copyDialog");
+    const msg = document.getElementById("dialogMessage");
+
+    msg.innerText = message;
+    dialog.classList.add("active");
+
+    // Tự đóng sau 2.5s
+    setTimeout(() => {
+        dialog.classList.remove("active");
+    }, 2500);
+}
+
+// ===== ĐÓNG DIALOG KHI BẤM NÚT =====
+document.getElementById("closeDialog").addEventListener("click", function() {
+    document.getElementById("copyDialog").classList.remove("active");
+});
+
+// ===== COPY CHÚ RỂ =====
+document.querySelector(".copy-groom").addEventListener("click", function () {
+
+    const bankName = document.querySelector(".groom-bank-name").innerText;
+    const bankNumber = document.querySelector(".groom-bank-number").innerText;
+    const bankOwner = document.querySelector(".groom-bank-owner").innerText;
+
+    const text = `Ngân hàng: ${bankName}
+STK: ${bankNumber}
+Chủ tài khoản: ${bankOwner}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        showDialog("Đã sao chép thông tin chú rể 💌");
+    }).catch(() => {
+        showDialog("Không thể sao chép ❌");
+    });
+});
+
+// ===== COPY CÔ DÂU =====
+document.querySelector(".copy-bride").addEventListener("click", function () {
+
+    const bankName = document.querySelector(".bride-bank-name").innerText;
+    const bankNumber = document.querySelector(".bride-bank-number").innerText;
+    const bankOwner = document.querySelector(".bride-bank-owner").innerText;
+
+    const text = `Ngân hàng: ${bankName}
+STK: ${bankNumber}
+Chủ tài khoản: ${bankOwner}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        showDialog("Đã sao chép thông tin cô dâu 💐");
+    }).catch(() => {
+        showDialog("Không thể sao chép ❌");
+    });
+});
+</script>
+
+</body>
+</html>

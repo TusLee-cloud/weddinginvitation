@@ -33,7 +33,7 @@ section{
 .hero-content{
     position:absolute;
     bottom:60px;
-    left:38%;
+    left:41%;
     transform:translateX(-50%);
     text-align:center;
     z-index:2;
@@ -891,7 +891,8 @@ section{
     width:100%;
     overflow:hidden;
     position:relative;
-    margin: -10em 0 10px 0;
+    margin: -13.5em 0 10px 0;
+    padding: 24px;
 }
 
 /* ===== TRACK ===== */

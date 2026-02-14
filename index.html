@@ -26,7 +26,7 @@
             <span class="groom">Lâm</span>
         </div>
         <div class="line"></div>
-        <div class="date">20 March 2026</div>
+        <div class="date">14 March 2026</div>
     </div>
 
 </section>
@@ -102,7 +102,7 @@
         <span class="organization">Được tổ chức tại</span> <br>   
         <span class="organization-lile">Tư gia Nhà gái</span>
         <p><strong>Thời gian:</strong> 18:00 - Thứ Bảy</p>
-        <p><strong>Ngày:</strong> 20/03/2026</p>
+        <p><strong>Ngày:</strong> 14/03/2026</p>
         <p><strong>Địa điểm:</strong> White Palace - TP.HCM</p>
 
         <button class="map-btn" onclick="toggleMap()">Xem Địa Chỉ</button>
@@ -375,9 +375,17 @@
     <source src="music/Shane Filan - Beautiful In White (Official Video) - (320 Kbps).mp3" type="audio/mpeg">
 </audio>
 
-<div id="musicControl" class="music-control">⏸</div>
+<div id="musicControl" class="music-control">
+    <!-- Play icon -->
+    <svg id="playIcon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M8 5v14l11-7z" fill="black"/>
+    </svg>
 
-
+    <!-- Pause icon -->
+    <svg id="pauseIcon" viewBox="0 0 24 24" width="24" height="24" style="display:none;">
+        <path d="M6 5h4v14H6zm8 0h4v14h-4z" fill="black"/>
+    </svg>
+</div>
 
 <script src="Js/Date.js"></script>
 <script src="Js/seed.js"></script>
@@ -389,7 +397,7 @@ function toggleMap(){
     map.style.display = map.style.display === "block" ? "none" : "block";
 }
 
-const weddingDate = new Date("March 20, 2026 18:00:00").getTime();
+const weddingDate = new Date("March 14, 2026 18:00:00").getTime();
 setInterval(()=>{
     const now = new Date().getTime();
     const distance = weddingDate - now;

@@ -88,7 +88,7 @@ section{
 
 /* DATE */
 .date{
-    font-size:14px;
+    font-size:18px;
     letter-spacing:3px;
     color:#fff;
     text-shadow: 0 0 10px #ffd500;
@@ -1416,22 +1416,15 @@ section{
 
 .music-control{
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 20px;
+    right: 20px;
     width: 50px;
     height: 50px;
+    background: #fdf8f4;
     border-radius: 50%;
-    background: #e8d8cd;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 20px;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    z-index: 9999;
-    transition: 0.3s ease;
-}
-
-.music-control:hover{
-    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }

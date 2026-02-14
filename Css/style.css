@@ -1,6 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family:'Playfair Display',serif;
+    font-family: "Cormorant Garamond", serif;
     background:#fdfaf6;
     color:#5c4b3b;
     line-height:1.6;
@@ -315,14 +315,16 @@ section{
     letter-spacing:3px;
     color:#b38b3c;
     margin:10px 0 15px;
-    font-family: "Borel", cursive;
-    font-weight: 600;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: bold;
 }
 
 .parents{
     font-size:16px;
     color:#555;
     margin:4px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: bold;
 }
 
 /* MOBILE */
@@ -380,6 +382,8 @@ section{
     color:#7a6a55;
     line-height:1.9;
     text-align: justify;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: bold;
 }
 
 @keyframes tim-dap-that {

@@ -1,11 +1,12 @@
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicControl");
+const playIcon = document.getElementById("playIcon");
+const pauseIcon = document.getElementById("pauseIcon");
 
 function startMusic(){
     music.play().then(()=>{
-        musicBtn.innerHTML = `<svg id="pauseIcon" viewBox="0 0 24 24" width="24" height="24">
-                                    <path d="M6 5h4v14H6zm8 0h4v14h-4z" fill="black"/>
-                                </svg>;`;
+        playIcon.style.display = "none";
+        pauseIcon.style.display = "block";
     }).catch(()=>{});
 }
 
@@ -13,15 +14,14 @@ document.addEventListener("click", startMusic, { once: true });
 
 musicBtn.addEventListener("click", function(e){
     e.stopPropagation();
+
     if(music.paused){
         music.play();
-        musicBtn.innerHTML = `<svg id="pauseIcon" viewBox="0 0 24 24" width="24" height="24">
-                                    <path d="M6 5h4v14H6zm8 0h4v14h-4z" fill="black"/>
-                                </svg>`;
+        playIcon.style.display = "none";
+        pauseIcon.style.display = "block";
     }else{
         music.pause();
-        musicBtn.innerHTML = `<svg id="playIcon" viewBox="0 0 24 24" width="24" height="24">
-                                    <path d="M8 5v14l11-7z" fill="black"/>
-                                </svg>`;
+        playIcon.style.display = "block";
+        pauseIcon.style.display = "none";
     }
 });

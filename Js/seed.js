@@ -32,6 +32,7 @@ async function loadWishes() {
     div.innerHTML = `
       <h4>${w.name}</h4>
       <p>${w.message}</p>
+      <small>${new Date(w.time).toLocaleString()}</small>
     `;
     list.appendChild(div);
   });

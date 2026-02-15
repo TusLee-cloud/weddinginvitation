@@ -157,6 +157,8 @@ section{
     padding:40px;
     background:white;
     box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    font-family: 'Times New Roman', Times, serif;
+    color: #271c14;
 }
 .invite-card p{
     margin:10px 0;
@@ -281,18 +283,18 @@ section{
 .img-left{
     width:320px;
     margin-top:40px;
-    box-shadow:0 25px 50px rgba(0,0,0,0.15);
+    box-shadow:0 25px 50px rgba(0,0,0,0.5);
 }
 
 .img-right{
     width:360px;
     margin-top:120px; /* tạo lệch */
-    box-shadow:0 25px 50px rgba(0,0,0,0.15);
+    box-shadow:0 25px 50px rgba(0,0,0,0.5);
 }
 
 /* TEXT */
 .text-block{
-    margin-bottom:20px;
+    margin: .5em 0 .5em 0;
 }
 
 .left-text{
@@ -886,7 +888,7 @@ section{
     width:100%;
     overflow:hidden;
     position:relative;
-    margin: -13.5em 0 10px 0;
+    margin: -10.5em 0 10px 0;
     padding: 24px;
 }
 

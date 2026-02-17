@@ -29,11 +29,12 @@ async function loadWishes() {
 
   data.reverse().forEach(w => {
     const div = document.createElement("div");
-    div.innerHTML = `
-      <h4>${w.name}</h4>
-      <p>${w.message}</p>
-      <small>${new Date(w.time).toLocaleString()}</small>
-    `;
+        div.className = "wish-item";
+        div.innerHTML = `
+            <h4>${w.name}</h4>
+            <p>${w.message}</p>
+            <span>${new Date(w.time).toLocaleString()}</span>
+        `;
     list.appendChild(div);
   });
 }

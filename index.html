@@ -40,21 +40,8 @@
 
     <div class="couple-wrapper">
 
-        <!-- CHÚ RỂ -->
-        <div class="couple-left">
-            <div class="text-block left-text">
-                <h4 class="role">Chú rể</h4>
-                <span class="name">Bảo Lâm</span>
-                <p class="parents">Con Ông: Nguyễn Văn A</p>
-                <p class="parents">Con Bà: Trần Thị B</p>
-            </div>
-
-            <img src="Image/chú rể.jpg" alt="Chú rể" class="img-left">
-        </div>
-
         <!-- CÔ DÂU -->
-        <div class="couple-right">
-            <img src="Image/IMG_8586.jpg" alt="Cô dâu" class="img-right">
+        <div class="couple-right">  
 
             <div class="text-block right-text">
                 <h4 class="role">Cô dâu</h4>
@@ -62,8 +49,24 @@
                 <p class="parents">Con Ông: Trần Văn C</p>
                 <p class="parents">Con Bà: Lê Thị D</p>
             </div>
+
+            <img src="Image/ẢNH TREO TƯỜNG/QUYS60951.jpg" alt="Cô dâu" class="img-right">
+
         </div>
 
+        <!-- CHÚ RỂ -->
+        <div class="couple-left">
+            
+            <img src="Image/ẢNH TREO TƯỜNG/QUYS60952.jpg" alt="Chú rể" class="img-left">
+            
+            <div class="text-block left-text">
+                <h4 class="role">Chú rể</h4>
+                <span class="name">Bảo Lâm</span>
+                <p class="parents">Con Ông: Nguyễn Văn A</p>
+                <p class="parents">Con Bà: Trần Thị B</p>
+            </div>
+
+        </div>
     </div>
 
     <div class="love-message">
@@ -136,22 +139,25 @@
 </section>
 
 <section class="wish-section">
-    <h2 class="wish-title">Gửi Lời Chúc</h2>
+    <div class="wish-header">
+        <h2>Gửi Lời Chúc</h2>
+        <p>
+            Mỗi lời chúc, mỗi sự hiện diện đều là điều đáng quý mà<br>
+            chúng tôi luôn trân trọng.
+        </p>
+    </div>
 
-    <p class="wish-subtitle">
-        Mỗi lời chúc, mỗi sự hiện diện đều là điều đáng quý mà <br>
-        chúng tôi luôn trân trọng. Cảm ơn vì bạn đã là một phần <br>
-        trong ngày đặc biệt này.
-    </p>
+    <div class="wish-card">
 
-    <form id="wishForm">
-        <input type="text" id="name" placeholder="Họ tên" required>
-        <textarea id="message" placeholder="Lời chúc..." required></textarea>
-        <button type="submit">💗 Gửi lời chúc</button>
-        
+        <form class="wish-form" id="wishForm">
+            <input type="text" id="name" placeholder="Họ tên của bạn" required>
+            <textarea id="message" placeholder="Viết lời chúc của bạn..." required></textarea>
+            <button type="submit" class="wish-btn" id="submitBtn">💗 Gửi lời chúc</button>
+        </form>
         <p id="status"></p>
-        <div id="wishList"></div>
-    </form>
+        <div class="wish-list" id="wishList"></div>
+
+    </div>
 
 </section>
 
@@ -222,6 +228,26 @@
                 <span>Always and forever</span>
             </div>
 
+            <div class="polaroid">
+                <img src="Image/ẢNH TREO TƯỜNG/QUYS6406.JPG" alt="Wedding Photo">
+                <span>Always and forever</span>
+            </div>
+
+            <div class="polaroid">
+                <img src="Image/ẢNH TREO TƯỜNG/QUYS6295.JPG" alt="Wedding Photo">
+                <span>Always and forever</span>
+            </div>
+
+            <div class="polaroid">
+                <img src="Image/ẢNH TREO TƯỜNG/QUYS6839.JPG" alt="Wedding Photo">
+                <span>Always and forever</span>
+            </div>
+
+            <div class="polaroid">
+                <img src="Image/ẢNH TREO TƯỜNG/QUYS6574.JPG" alt="Wedding Photo">
+                <span>Always and forever</span>
+            </div>
+
         </div>
     </div>
 </section>
@@ -235,47 +261,67 @@
             Hãy nhấn xác nhận để cùng chung vui nhé!
         </p>
 
-        <form class="rsvp-form">
+        <form class="rsvp-form" id="rsvpForm">
 
-            <input type="text" placeholder="Họ và Tên" class="rsvp-input">
+            <input 
+                type="text" 
+                name="name"
+                placeholder="Họ và Tên" 
+                class="rsvp-input"
+                required
+            >
 
-            <textarea placeholder="Gửi lời nhắn đến cô dâu và chú rể" class="rsvp-textarea"></textarea>
+            <textarea 
+                name="message"
+                placeholder="Gửi lời nhắn đến cô dâu và chú rể" 
+                class="rsvp-textarea"
+            ></textarea>
 
-            <select class="rsvp-select">
-                <option selected disabled>Bạn sẽ đến chứ?</option>
-                <option>Có, chắc chắn rồi</option>
-                <option>Rất tiếc không thể tham dự</option>
+            <select name="attending" class="rsvp-select" required>
+                <option value="" disabled selected>Bạn sẽ đến chứ?</option>
+                <option value="Có, chắc chắn rồi">Có, chắc chắn rồi</option>
+                <option value="Rất tiếc không thể tham dự">Rất tiếc không thể tham dự</option>
             </select>
 
-            <select class="rsvp-select">
-                <option selected disabled>Bạn đi bao nhiêu người?</option>
-                <option>1 người</option>
-                <option>2 người</option>
-                <option>3 người</option>
-                <option>4 người</option>
+            <select name="guests" class="rsvp-select" required>
+                <option value="" disabled selected>Bạn đi bao nhiêu người?</option>
+                <option value="1">1 người</option>
+                <option value="2">2 người</option>
+                <option value="3">3 người</option>
+                <option value="4">4 người</option>
             </select>
+
+            <input 
+                type="text"
+                name="estimated"
+                placeholder="Thời gian dự kiến đến dự (VD: 18:00)"
+                pattern="^([01]\d|2[0-3]):([0-5]\d)$"
+                title="Vui lòng nhập đúng định dạng 24h (VD: 18:00)"
+                class="rsvp-input"
+                required
+            >
 
             <div class="guest-of">
-                <p>Ban là khách mời của ai?</p>
+                <p>Bạn là khách mời của ai?</p>
 
                 <div class="guest-options">
 
                     <label class="guest-card">
-                        <input type="radio" name="guestOf">
-                        <img src="Image/chú rể.jpg" alt="">
-                        <span>Chú Rể</span>
+                        <input type="radio" name="side" value="Cô Dâu" required>
+                        <img src="Image/ẢNH TREO TƯỜNG/QUYS60958.png" alt="">
+                        <span>Cô Dâu</span>
                     </label>
 
                     <label class="guest-card">
-                        <input type="radio" name="guestOf">
-                        <img src="Image/IMG_8586.jpg" alt="">
-                        <span>Cô Dâu</span>
+                        <input type="radio" name="side" value="Chú Rể">
+                        <img src="Image/ẢNH TREO TƯỜNG/QUYS60959.png" alt="">
+                        <span>Chú Rể</span>
                     </label>
 
                 </div>
             </div>
 
-            <button type="submit" class="btn-primary">
+            <button type="submit" class="btn-primary" id="submitBtn">
                 GỬI LỜI NHẮN VÀ XÁC NHẬN
             </button>
 
@@ -307,36 +353,12 @@
 
         <div class="gift-boxes">
 
-            <!-- ===== CHÚ RỂ ===== -->
-            <div class="gift-card groom-card">
-                <h3>MỪNG CƯỚI ĐẾN<br>CHÚ RỂ</h3>
-
-                <div class="qr-box">
-                    <img src="Image/chú rể.jpg">
-                </div>
-
-                <div class="gift-actions">
-                    <button class="download-btn">Tải ảnh QR</button>
-                    <button class="copy-groom">Copy STK</button>
-                </div>
-
-                <!-- Bank chú rể -->
-                <div class="groom-bank" style="display:none;">
-                    <p class="groom-bank-name">MB Bank</p>
-                    <p class="groom-bank-number">0123456789</p>
-                    <p class="groom-bank-owner">NGUYỄN VĂN A</p>
-                </div>
-
-            </div>
-
-
-
             <!-- ===== CÔ DÂU ===== -->
             <div class="gift-card bride-card">
                 <h3>MỪNG CƯỚI ĐẾN<br>CÔ DÂU</h3>
 
                 <div class="qr-box">
-                    <img src="Image/IMG_8586.jpg">
+                    <img src="Image/ẢNH TREO TƯỜNG/QUYS60958.png">
                 </div>
 
                 <div class="gift-actions">
@@ -349,6 +371,28 @@
                     <p class="bride-bank-name">Vietcombank</p>
                     <p class="bride-bank-number">987654321</p>
                     <p class="bride-bank-owner">TRẦN THỊ B</p>
+                </div>
+
+            </div>
+
+                        <!-- ===== CHÚ RỂ ===== -->
+            <div class="gift-card groom-card">
+                <h3>MỪNG CƯỚI ĐẾN<br>CHÚ RỂ</h3>
+
+                <div class="qr-box">
+                    <img src="Image/ẢNH TREO TƯỜNG/QUYS60952.jpg">
+                </div>
+
+                <div class="gift-actions">
+                    <button class="download-btn">Tải ảnh QR</button>
+                    <button class="copy-groom">Copy STK</button>
+                </div>
+
+                <!-- Bank chú rể -->
+                <div class="groom-bank" style="display:none;">
+                    <p class="groom-bank-name">MB Bank</p>
+                    <p class="groom-bank-number">0123456789</p>
+                    <p class="groom-bank-owner">NGUYỄN VĂN A</p>
                 </div>
 
             </div>
@@ -405,11 +449,23 @@
     </svg>
 </div>
 
+<div id="rsvpPopup" class="rsvp-popup">
+    <div class="rsvp-popup-box">
+        <h3>💌 Xác nhận thành công</h3>
+        <p>
+            Cảm ơn bạn đã phản hồi.<br>
+            Chúng tôi rất mong được đón tiếp bạn ❤️
+        </p>
+        <button id="closePopup">Đóng</button>
+    </div>
+</div>
+
 
 <script src="Js/Date.js"></script>
 <script src="Js/seed.js"></script>
 <script src="Js/Image.js"></script>
 <script src="Js/music.js"></script>
+<script src="Js/WEDDING_RSVP_2026.js"></script>
 <script>
 function toggleMap(){
     const map = document.getElementById("mapBox");

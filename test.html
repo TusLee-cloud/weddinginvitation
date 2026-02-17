@@ -3,163 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gửi Lời Chúc</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Wedding Wishes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+/* RESET */
+*{
     margin:0;
-    font-family:'Be Vietnam Pro', sans-serif;
-    background:#f5efe8;
-    color:#6d5c4b;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ===== SECTION ===== */
+body{
+    font-family:'Noto Serif KR', serif;
+    background:linear-gradient(to bottom,#f6f1eb,#efe7dd);
+    color:#5b4b3f;
+    overflow-x:hidden;
+}
+
+/* SECTION */
 .wish-section{
-    padding:100px 20px;
+    min-height:100vh;
+    padding:120px 20px;
     text-align:center;
+}
+
+/* HEADER */
+.wish-header{
+    animation:fadeDown 1.2s ease;
 }
 
 .wish-header h2{
     font-family:'Playfair Display', serif;
-    font-size:40px;
-    margin-bottom:15px;
-    color:#5e4b3c;
+    font-size:48px;
+    margin-bottom:20px;
 }
 
 .wish-header p{
     max-width:600px;
-    margin:0 auto 60px;
-    line-height:1.8;
+    margin:0 auto 70px;
+    line-height:1.9;
     font-size:15px;
-    color:#8b7765;
+    color:#8c7a6e;
 }
 
-/* ===== CONTAINER 2 CỘT ===== */
-.wish-container{
-    max-width:1100px;
+/* CARD */
+.wish-card{
+    max-width:650px;
     margin:auto;
-    display:flex;
-    gap:50px;
-    align-items:flex-start;
-    justify-content:center;
-    flex-wrap:wrap;
+    background:#fdfaf6;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 25px 50px rgba(0,0,0,0.08);
+    border:1px solid #f0e6dc;
+    animation:fadeUp 1.2s ease;
 }
 
-/* ===== FORM ===== */
+/* FORM */
 .wish-form{
-    flex:1;
-    min-width:320px;
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(10px);
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 25px 40px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
 
 .wish-form input,
 .wish-form textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:20px;
-    border:none;
+    padding:18px 20px;
     border-radius:12px;
-    background:#f3ede6;
-    font-family:'Be Vietnam Pro', sans-serif;
+    border:1px solid #e7ded5;
+    background:#fbf7f2;
     font-size:14px;
-    outline:none;
+    transition:all .3s ease;
 }
 
 .wish-form textarea{
-    height:120px;
+    min-height:140px;
     resize:none;
 }
 
-.wish-form button{
-    width:100%;
-    padding:14px;
+.wish-form input:focus,
+.wish-form textarea:focus{
+    outline:none;
+    border-color:#d8c3b5;
+    box-shadow:0 0 0 3px rgba(216,195,181,0.2);
+}
+
+/* BUTTON */
+.wish-btn{
+    padding:16px;
     border:none;
     border-radius:50px;
-    background:linear-gradient(135deg,#e8d5c0,#d4bfa6);
-    font-weight:600;
-    letter-spacing:1px;
+    font-size:15px;
     cursor:pointer;
-    transition:0.3s ease;
-    color:#5e4b3c;
+    font-family:'Playfair Display', serif;
+    letter-spacing:.5px;
+    background:linear-gradient(135deg,#e6d5c3,#d7bfae);
+    color:#5b4b3f;
+    transition:all .4s ease;
 }
 
-.wish-form button:hover{
+.wish-btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
-#status{
-    margin-top:15px;
-    font-size:14px;
-    color:#9b7c5d;
+.wish-btn.loading{
+    opacity:.7;
+    pointer-events:none;
 }
 
-/* ===== DANH SÁCH ===== */
+/* LIST */
 .wish-list{
-    flex:1;
-    min-width:320px;
-    max-height:420px;
+    margin-top:60px;
+    max-height:300px;
     overflow-y:auto;
     padding-right:10px;
 }
 
-/* Scrollbar */
 .wish-list::-webkit-scrollbar{
     width:6px;
 }
 .wish-list::-webkit-scrollbar-thumb{
-    background:#d4bfa6;
+    background:#d8c3b5;
     border-radius:10px;
 }
 
 /* ITEM */
 .wish-item{
-    background:#f7f1ea;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
     text-align:left;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-    animation:fadeInUp 0.6s ease;
+    background:#f8f2ec;
+    padding:20px 25px;
+    border-radius:14px;
+    margin-bottom:20px;
+    border:1px solid #eee3d9;
+    animation:fadeUp .6s ease;
 }
 
-.wish-name{
-    font-weight:600;
-    margin-bottom:5px;
-    color:#5e4b3c;
+.wish-item h4{
+    font-family:'Playfair Display', serif;
+    margin-bottom:8px;
 }
 
-.wish-message{
+.wish-item p{
     font-size:14px;
-    line-height:1.6;
-    color:#7b6958;
+    line-height:1.7;
+    margin-bottom:8px;
 }
 
-/* Animation */
-@keyframes fadeInUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.wish-item span{
+    font-size:12px;
+    color:#a08f84;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-    .wish-container{
-        flex-direction:column;
-    }
+/* MODAL */
+.lux-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:.4s;
 }
+
+.lux-modal.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-box{
+    background:#fffaf5;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:400px;
+    box-shadow:0 30px 60px rgba(0,0,0,.2);
+    transform:translateY(20px);
+    transition:.4s;
+}
+
+.lux-modal.active .modal-box{
+    transform:translateY(0);
+}
+
+.modal-box h3{
+    font-family:'Playfair Display', serif;
+    margin-bottom:15px;
+}
+
+.modal-box p{
+    font-size:14px;
+    margin-bottom:25px;
+    color:#7c6c61;
+}
+
+.modal-btn{
+    padding:10px 25px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#e6d5c3,#d7bfae);
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
 </style>
 </head>
 <body>
@@ -169,33 +231,39 @@ body{
     <div class="wish-header">
         <h2>Gửi Lời Chúc</h2>
         <p>
-            Mỗi lời chúc, mỗi sự hiện diện đều là điều đáng quý mà
-            chúng tôi luôn trân trọng. Cảm ơn vì bạn đã là một phần
-            trong ngày đặc biệt này.
+            Mỗi lời chúc, mỗi sự hiện diện đều là điều đáng quý mà<br>
+            chúng tôi luôn trân trọng.
         </p>
     </div>
 
-    <div class="wish-container">
+    <div class="wish-card">
 
-        <!-- FORM -->
-        <form id="wishForm" class="wish-form">
-            <input type="text" id="name" placeholder="Họ tên" required>
-            <textarea id="message" placeholder="Lời chúc" required></textarea>
-            <button type="submit">💗 Gửi lời chúc</button>
-            <p id="status"></p>
+        <form class="wish-form" id="wishForm">
+            <input type="text" id="name" placeholder="Họ tên của bạn" required>
+            <textarea id="message" placeholder="Viết lời chúc của bạn..." required></textarea>
+            <button type="submit" class="wish-btn" id="submitBtn">💗 Gửi lời chúc</button>
         </form>
 
-        <!-- LIST -->
         <div class="wish-list" id="wishList"></div>
 
     </div>
-
 </section>
 
+<!-- MODAL -->
+<div class="lux-modal" id="luxModal">
+    <div class="modal-box">
+        <h3>Cảm ơn bạn 🤍</h3>
+        <p>Lời chúc của bạn đã được gửi thành công.</p>
+        <button class="modal-btn" onclick="closeModal()">Đóng</button>
+    </div>
+</div>
+
 <script>
+
 const form = document.getElementById("wishForm");
-const wishList = document.getElementById("wishList");
-const statusText = document.getElementById("status");
+const list = document.getElementById("wishList");
+const modal = document.getElementById("luxModal");
+const btn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", function(e){
     e.preventDefault();
@@ -203,27 +271,37 @@ form.addEventListener("submit", function(e){
     const name = document.getElementById("name").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    if(name === "" || message === ""){
-        return;
-    }
+    if(!name || !message) return;
 
-    const wishItem = document.createElement("div");
-    wishItem.classList.add("wish-item");
+    btn.classList.add("loading");
+    btn.innerText = "ĐANG GỬI...";
 
-    wishItem.innerHTML = `
-        <div class="wish-name">${name}</div>
-        <div class="wish-message">${message}</div>
-    `;
+    setTimeout(()=>{
+        const now = new Date().toLocaleString("vi-VN");
 
-    wishList.prepend(wishItem);
+        const item = document.createElement("div");
+        item.className = "wish-item";
+        item.innerHTML = `
+            <h4>${name}</h4>
+            <p>${message}</p>
+            <span>${now}</span>
+        `;
 
-    statusText.textContent = "💌 Lời chúc đã được gửi!";
-    form.reset();
+        list.prepend(item);
 
-    setTimeout(() => {
-        statusText.textContent = "";
-    }, 3000);
+        form.reset();
+        btn.classList.remove("loading");
+        btn.innerText = "💗 Gửi lời chúc";
+
+        modal.classList.add("active");
+
+    },800);
 });
+
+function closeModal(){
+    modal.classList.remove("active");
+}
+
 </script>
 
 </body>

@@ -184,6 +184,8 @@ section{
     font-size: 22px;
     font-family: 'Times New Roman', Times, serif;
     text-transform: uppercase;
+    font-weight: bold;
+    color: #a78c6d;
 }
 
 .organization-lile{
@@ -1492,4 +1494,121 @@ section{
 @keyframes fadeDown{
     from{opacity:0; transform:translateY(-30px);}
     to{opacity:1; transform:translateY(0);}
+}
+
+.wedding-info-section{
+    padding:100px 20px;
+    text-align:center;
+    background:#f8f5f0;
+}
+
+.information{
+    font-size:38px;
+    margin-bottom:60px;
+    font-family:'Playfair Display', serif;
+    color:#6b5b4d;
+}
+
+/* FLIP CARD */
+.flip-card{
+    width:100%;
+    max-width:650px;
+    height:550px;
+    margin:0 auto;
+    perspective:1500px;
+    cursor:pointer;
+}
+
+.flip-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transition:transform 0.9s cubic-bezier(.4,2,.6,1);
+    transform-style:preserve-3d;
+}
+
+.flip-card.flipped .flip-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:10px;
+    padding:30px;
+    background:url('Image/Beige.png') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.flip-back{
+    transform:rotateY(180deg);
+}
+
+.organization-title{
+    font-size:26px;
+    font-weight:600;
+    color:#5e4b3c;
+}
+
+.content p{
+    margin:10px 0;
+    color:#000;
+}
+
+/* MAP */
+.map-box{
+    margin-top:20px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+.map-box iframe{
+    width:100%;
+    height:220px;
+    border:0;
+}
+
+/* HINT */
+.hint{
+    text-align:center;
+    font-size:14px;
+    color:#b79a75;
+    margin-top:10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .flip-card{
+        height:520px;
+    }
+
+    .information{
+        font-size:28px;
+    }
+}
+
+.overlose{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        #212529 0%,
+        #212529 20%,
+        #ced4da 50%,
+        transparent 100%
+    );
+    z-index: -1;
+    border-radius: 10px;
 }

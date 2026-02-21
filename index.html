@@ -26,7 +26,7 @@
             <span class="groom">Lâm</span>
         </div>
         <div class="line"></div>
-        <div class="date">14 March 2026</div>
+        <div class="date">13 March 2026</div>
     </div>
 
 </section>
@@ -98,7 +98,7 @@
 </section>
 
 <!-- 4. THIỆP + MAP -->
-<section>
+<!-- <section>
     <h2 class="information">Thông Tin Lễ Cưới</h2>
     <div class="invite-card"
         style="background: url('Image/Beige.png') center/cover no-repeat;">
@@ -117,7 +117,70 @@
             </iframe>
         </div>
     </div>
+</section> -->
+<section class="wedding-info-section">
+    <h2 class="information">Thông Tin Lễ Cưới</h2>
+
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner" style="background: url('Image/Beige.png') center/cover no-repeat;">
+
+            <!-- MẶT TRƯỚC - NHÀ GÁI -->
+            <div class="flip-front invite-card">
+
+                <div class="overlose"></div>
+                
+                <div class="content">
+                    <span class="organization">Được tổ chức tại</span><br>
+                    <span class="organization-title">Tư gia Nhà gái</span>
+
+                    <p><strong>Thời gian:</strong> 17:00 - Thứ Sáu</p>
+                    <p><strong>Ngày:</strong> 13/03/2026</p>
+                    <p><strong>Địa điểm:</strong>Số nhà 11/ ngõ 185/ thôn Phú Đa/ xã Đức Thượng/ 
+                    huyện Hoài Đức/ TP. Hà Nội</p>
+                </div>
+
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d857.7794766119001!2d105.69219191732884!3d21.075676094417084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zbmjDoCBz4buRIDExIG5nw7UgMTg1IHRow7RuIHBow7ogxJFhIMSR4bupYyB0aMaw4bujbmcgaG_DoGkgxJHhu6lj!5e1!3m2!1svi!2s!4v1771403167947!5m2!1svi!2s"
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+
+                <div class="hint">- Chạm để xem Nhà Trai -</div>
+            </div>
+
+            <!-- MẶT SAU - NHÀ TRAI -->
+            <div class="flip-back invite-card">
+
+                <div class="overlose"></div>
+
+                <div class="content">
+                    <span class="organization">Được tổ chức tại</span><br>
+                    <span class="organization-title">Tư gia Nhà trai</span>
+
+                    <p><strong>Thời gian:</strong> 17:00 - Thứ Sáu</p>
+                    <p><strong>Ngày:</strong> 13/03/2026</p>
+                    <p><strong>Địa điểm:</strong> Hoài Đức - Hà Nội</p>
+                </div>
+
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d857.7794766119001!2d105.69219191732884!3d21.075676094417084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zbmjDoCBz4buRIDExIG5nw7UgMTg1IHRow7RuIHBow7ogxJFhIMSR4bupYyB0aMaw4bujbmcgaG_DoGkgxJHhu6lj!5e1!3m2!1svi!2s!4v1771403167947!5m2!1svi!2s"
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+
+                <div class="hint">- Chạm để xem Nhà Gái -</div>
+            </div>
+
+        </div>
+    </div>
 </section>
+
 
 <!-- lịch -->
 <section class="calendar-imte">
@@ -467,12 +530,12 @@
 <script src="Js/music.js"></script>
 <script src="Js/WEDDING_RSVP_2026.js"></script>
 <script>
-function toggleMap(){
-    const map = document.getElementById("mapBox");
-    map.style.display = map.style.display === "block" ? "none" : "block";
-}
+// function toggleMap(){
+//     const map = document.getElementById("mapBox");
+//     map.style.display = map.style.display === "block" ? "none" : "block";
+// }
 
-const weddingDate = new Date("March 14, 2026 18:00:00").getTime();
+const weddingDate = new Date("March 13, 2026 22:00:00").getTime();
 setInterval(()=>{
     const now = new Date().getTime();
     const distance = weddingDate - now;

@@ -1,5 +1,5 @@
 // ===== CHANGE YOUR SPECIAL DATE HERE =====
-const highlightDate = new Date(2026, 2, 14);
+const highlightDate = new Date(2026, 2, 13);
 // (Year, Month-1, Day)
 // Example: March 20, 2026 → month = 2
 

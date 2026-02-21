@@ -46,8 +46,8 @@
             <div class="text-block right-text">
                 <h4 class="role">Cô dâu</h4>
                 <span class="name">Thu Hiền</span>
-                <p class="parents">Con Ông: Trần Văn C</p>
-                <p class="parents">Con Bà: Lê Thị D</p>
+                <p class="parents">Con Ông: Nông Trọng Giáp</p>
+                <p class="parents">Con Bà: Cao Thị Thảo </p>
             </div>
 
             <img src="Image/ẢNH TREO TƯỜNG/QUYS60951.jpg" alt="Cô dâu" class="img-right">
@@ -62,8 +62,8 @@
             <div class="text-block left-text">
                 <h4 class="role">Chú rể</h4>
                 <span class="name">Bảo Lâm</span>
-                <p class="parents">Con Ông: Nguyễn Văn A</p>
-                <p class="parents">Con Bà: Trần Thị B</p>
+                <p class="parents">Con Ông: Đinh Mạnh Hùng</p>
+                <p class="parents">Con Bà: Đỗ Thị Hồng Minh</p>
             </div>
 
         </div>
@@ -98,14 +98,14 @@
 </section>
 
 <!-- 4. THIỆP + MAP -->
-<!-- <section>
+<section>
     <h2 class="information">Thông Tin Lễ Cưới</h2>
     <div class="invite-card"
         style="background: url('Image/Beige.png') center/cover no-repeat;">
         <span class="organization">Được tổ chức tại</span> <br>   
         <span class="organization-lile">Tư gia Nhà gái</span>
-        <p><strong>Thời gian:</strong> 18:00 - Thứ Bảy</p>
-        <p><strong>Ngày:</strong> 14/03/2026</p>
+        <p><strong>Thời gian:</strong> 17:00 - Thứ Sáu</p>
+        <p><strong>Ngày:</strong> 13/03/2026</p>
         <p><strong>Địa điểm:</strong> Số nhà 11/ ngõ 185/ thôn Phú Đa/ xã Đức Thượng/ huyện Hoài Đức/ TP. Hà Nội.</p>
 
         <button class="map-btn" onclick="toggleMap()">Xem Địa Chỉ</button>
@@ -117,14 +117,13 @@
             </iframe>
         </div>
     </div>
-</section> -->
-<section class="wedding-info-section">
+</section>
+<!-- <section class="wedding-info-section">
     <h2 class="information">Thông Tin Lễ Cưới</h2>
 
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
         <div class="flip-inner" style="background: url('Image/Beige.png') center/cover no-repeat;">
 
-            <!-- MẶT TRƯỚC - NHÀ GÁI -->
             <div class="flip-front invite-card">
 
                 <div class="overlose"></div>
@@ -151,7 +150,6 @@
                 <div class="hint">- Chạm để xem Nhà Trai -</div>
             </div>
 
-            <!-- MẶT SAU - NHÀ TRAI -->
             <div class="flip-back invite-card">
 
                 <div class="overlose"></div>
@@ -179,7 +177,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- lịch -->
@@ -421,21 +419,12 @@
                 <h3>MỪNG CƯỚI ĐẾN<br>CÔ DÂU</h3>
 
                 <div class="qr-box">
-                    <img src="Image/ẢNH TREO TƯỜNG/QUYS60958.png">
+                    <img src="Image/IMG_5799.jpeg">
                 </div>
 
                 <div class="gift-actions">
                     <button class="download-btn">Tải ảnh QR</button>
-                    <button class="copy-bride">Copy STK</button>
                 </div>
-
-                <!-- Bank cô dâu -->
-                <div class="bride-bank" style="display:none;">
-                    <p class="bride-bank-name">Vietcombank</p>
-                    <p class="bride-bank-number">987654321</p>
-                    <p class="bride-bank-owner">TRẦN THỊ B</p>
-                </div>
-
             </div>
 
                         <!-- ===== CHÚ RỂ ===== -->
@@ -443,19 +432,11 @@
                 <h3>MỪNG CƯỚI ĐẾN<br>CHÚ RỂ</h3>
 
                 <div class="qr-box">
-                    <img src="Image/ẢNH TREO TƯỜNG/QUYS60952.jpg">
+                    <img src="Image/4264a20d-84d9-4bba-aeb0-00cf3aeaa019.jpg">
                 </div>
 
                 <div class="gift-actions">
                     <button class="download-btn">Tải ảnh QR</button>
-                    <button class="copy-groom">Copy STK</button>
-                </div>
-
-                <!-- Bank chú rể -->
-                <div class="groom-bank" style="display:none;">
-                    <p class="groom-bank-name">MB Bank</p>
-                    <p class="groom-bank-number">0123456789</p>
-                    <p class="groom-bank-owner">NGUYỄN VĂN A</p>
                 </div>
 
             </div>
@@ -485,7 +466,7 @@
         </div>
 
         <div class="footer-date">
-            14.03.2026
+            13.03.2026
         </div>
 
     </div>
@@ -530,10 +511,10 @@
 <script src="Js/music.js"></script>
 <script src="Js/WEDDING_RSVP_2026.js"></script>
 <script>
-// function toggleMap(){
-//     const map = document.getElementById("mapBox");
-//     map.style.display = map.style.display === "block" ? "none" : "block";
-// }
+function toggleMap(){
+    const map = document.getElementById("mapBox");
+    map.style.display = map.style.display === "block" ? "none" : "block";
+}
 
 const weddingDate = new Date("March 13, 2026 22:00:00").getTime();
 setInterval(()=>{

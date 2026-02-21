@@ -93,17 +93,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-document.querySelectorAll(".gift-card").forEach((card, index) => {
+document.querySelectorAll(".gift-card").forEach((card) => {
 
-    const downloadBtn = card.querySelector(".gift-actions button:first-child");
+    const downloadBtn = card.querySelector(".download-btn");
     const img = card.querySelector(".qr-box img");
 
     downloadBtn.addEventListener("click", function(){
 
         const link = document.createElement("a");
 
-        link.href = img.getAttribute("src"); // dùng src gốc
-        link.download = index === 0 ? "qr-chu-re.png" : "qr-co-dau.png";
+        link.href = img.src;
+
+        if(card.classList.contains("bride-card")){
+            link.download = "qr-co-dau.png";
+        } else if(card.classList.contains("groom-card")){
+            link.download = "qr-chu-re.png";
+        }
 
         document.body.appendChild(link);
         link.click();
